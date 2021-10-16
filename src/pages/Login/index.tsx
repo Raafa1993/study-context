@@ -45,7 +45,7 @@ export default function Login() {
       event.preventDefault();
       setLoading(true)
 
-      const { email, password } = formData;
+      // const { email, password } = formData;
 
       // const data = {
       //   email,
