@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IoLogoWindows, } from 'react-icons/io'
-import { FiLogOut } from 'react-icons/fi'
+import { FiLogOut, FiChevronRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 
 import {
@@ -13,7 +13,8 @@ import {
   ProfileDetails,
   NameJob,
   Name,
-  Job
+  Job,
+  ButtonBurguer
 } from './styles';
 
 interface IMenu {
@@ -29,10 +30,10 @@ interface ISiderbar {
 }
 
 export default function Sidebar({ menus, path }: ISiderbar) {
-
+  const [mobalActive, setMobalActive] = useState(false)
   return (
-    <Container>
-      <Logo>
+    <Container mobalActive={mobalActive}>
+      <Logo mobalActive={mobalActive}>
         <IoLogoWindows />
         <span>MostWeb</span>
       </Logo>
@@ -41,6 +42,7 @@ export default function Sidebar({ menus, path }: ISiderbar) {
           <Li
             key={key}
             active={path === row.to ? true : false}
+            mobalActive={mobalActive}
           >
             <Link
               to={row.to}
@@ -68,6 +70,15 @@ export default function Sidebar({ menus, path }: ISiderbar) {
           <FiLogOut />
         </Profile>
       </ProfileContent>
+
+      <ButtonBurguer mobalActive={mobalActive}>
+        <button
+          onClick={() => setMobalActive(!mobalActive)}
+        >
+          <FiChevronRight />
+        </button>
+      </ButtonBurguer>
+
     </Container>
   )
 }

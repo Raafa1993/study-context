@@ -32,28 +32,28 @@ export default function Layout(props: any) {
             icon: FiBookOpen,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/profiles',
+            name: 'Profiles',
             icon: FiCodesandbox,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/sections',
+            name: 'Sections',
             icon: FiGitlab,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/friends',
+            name: 'Friends',
             icon: FiLayers,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/games',
+            name: 'Games',
             icon: FiCompass,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/settings',
+            name: 'Settings',
             icon: FiSettings,
           },
 

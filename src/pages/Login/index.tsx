@@ -1,8 +1,8 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef } from "react";
 import { useHistory } from "react-router";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
-import { AuthContext } from '../../context/AuthContext'
+import { useAuth } from '../../hooks/AuthContext'
 import {
   Container,
   Content,
@@ -27,13 +27,15 @@ interface Errors {
 export default function Login() {
   const formRef = useRef(null);
   const history = useHistory()
-  const { signIn } = useContext(AuthContext)
+  const { user, signIn } = useAuth()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState({} as Errors);
   const [formData, setFormData] = useState<SignInFormData>({
     email: "",
     password: "",
   });
+
+  console.log(user)
 
   function handleinputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -45,24 +47,27 @@ export default function Login() {
       event.preventDefault();
       setLoading(true)
 
-      // const { email, password } = formData;
+      const { email, password } = formData;
 
-      // const data = {
-      //   email,
-      //   password,
-      // };
+      const data = {
+        email,
+        password,
+      };
 
-      if (formData.email !== "mostweb@most.com")
-        throw {
-          name: "Usuario ou senha incorretos.",
-          message: "Usuario ou senha incorretos.",
-        };
+      // if (formData.email !== "mostweb@most.com")
+      //   throw {
+      //     name: "Usuario ou senha incorretos.",
+      //     message: "Usuario ou senha incorretos.",
+      //   };
+      signIn({
+        email: data.email,
+        password: data.password,
+      })
 
-      setTimeout(() => {
-        history.push('/home')
-      }, 1000);
+      // setTimeout(() => {
+      //   history.push('/home')
+      // }, 1000);
 
-      signIn()
     } catch (e: any) {
       setTimeout(() => {
         setError({

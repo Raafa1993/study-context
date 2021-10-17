@@ -8,6 +8,19 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
+:root {
+  --primary: #393452;
+  --colorText: #B4B1C6;
+  
+  --background: #F8F9FE;
+  --white: #ffffff;
+
+  --degradeDark: #6774EC;
+  --degradeLight: #89ECF2;
+
+
+}
+
 body {
     background: '#f6f6f6';
 

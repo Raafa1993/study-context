@@ -2,17 +2,25 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
-  min-height: 100vh;
-
-  overflow: hidden;
-  position: relative;
-
-  background: lightcoral;
-`
+  justify-content: space-between;
+  height: 100%;
+`;
 
 export const Main = styled.div`
-  width: 100%;
+  flex: 1;
+  padding: 0px 32px;
+  overflow: auto;
+  max-height: 100vh;
+  @keyframes pageReload {
+    from {
+      filter: blur(50px);
+    }
+    to {
+      filter: blur(0px);
+    }
+  }
 
-  background: lightcyan;
-`
+  > div {
+    animation: pageReload 0.5s;
+  }
+`;

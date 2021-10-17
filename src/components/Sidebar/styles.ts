@@ -1,32 +1,60 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 240px;
-  background: #11101d;
-  padding: 6px 14px;
-  transition: all 0.5s ease;
-`;
-
-interface IMenuItem {
+interface sidebarProps {
+  mobalActive?: boolean;
   active?: boolean;
 }
 
-export const Logo = styled.div`
+export const Container = styled.div<sidebarProps>`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: ${(props) => (props.mobalActive ? "78px" : "220px")};
+  background: var(--primary);
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+
+  position: relative;
+`;
+
+export const ButtonBurguer = styled.div<sidebarProps>`
+  position: absolute;
+  top: 50%;
+  right: ${(props) => (props.mobalActive ? "-55%" : "-20%")};
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 60px;
+
+    outline: none;
+    border: none;
+
+    border-radius: 0 12px 12px 0;
+    background: var(--primary);
+
+    font-size: 2rem;
+    color: var(--white);
+  }
+`;
+
+export const Logo = styled.div<sidebarProps>`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 50px;
   color: #fff;
   font-size: 1.75rem;
 
   span {
-    font-size: 1.375rem;
     color: #fff;
     font-weight: 500;
+    display: ${(props) => (!props.mobalActive ? "block" : "none")};
   }
 
   svg {
@@ -35,41 +63,51 @@ export const Logo = styled.div`
 `;
 
 export const Ul = styled.ul`
-  margin-top: 20px;
+  height: 80%;
 `;
 
-export const Li = styled.li<IMenuItem>`
+export const Li = styled.li<sidebarProps>`
   width: 100%;
   height: 50px;
-  margin: 0 5px;
   list-style: none;
   line-height: 50px;
+  border-radius: 12px;
   position: relative;
 
-  background: ${props => props.active ? "#fff" : 'transparent'};
-  border-radius: 12px;
-
+  ${(props) =>
+    props.active &&
+    css`
+      background: linear-gradient(
+        90deg,
+        rgba(103, 116, 236, 1) 0%,
+        rgba(137, 236, 242, 1) 100%
+      );
+    `}
   a {
     display: flex;
     align-items: center;
-    color: ${(props) => (props.active ? "red" : "#fff")};
+    color: ${(props) => (props.active ? "#fff" : "var(--colorText)")};
     white-space: nowrap;
     text-decoration: none;
     border-radius: 12px;
-    transition: background-color 0.4s ease;
+  }
 
-    &:hover {
-      color: #11101d;
-      background: #fff;
-      transition: background-color 0.4s ease;
-    }
+  span {
+    opacity: 0;
+    pointer-events: none;
+    ${(props) =>
+    !props.mobalActive &&
+    css`
+        opacity: 1;
+        pointer-events: auto;
+      `}
   }
 
   .tooltip {
     position: absolute;
-    left: 290px;
+    left: 133px;
     top: 0;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
     width: 122px;
@@ -80,6 +118,7 @@ export const Li = styled.li<IMenuItem>`
     transition: 0s;
     opacity: 0;
     pointer-events: none;
+    display: ${(props) => (props.mobalActive ? "block" : "none")};
   }
 
   svg {
@@ -88,14 +127,13 @@ export const Li = styled.li<IMenuItem>`
     text-align: center;
     transition: all 0.5s;
     transform: ${(props) => (props.active ? "scale(1.3)" : "scale(1)")};
-    color: ${(props) => (props.active ? "red" : "")};
+    color: ${(props) => (props.active ? "#fff" : "var(--colorText)")};
   }
 
   &:hover {
     svg {
       transition: all 0.5s;
       transform: scale(1.3);
-      color: red;
     }
     .tooltip {
       top: 50%;
@@ -106,25 +144,22 @@ export const Li = styled.li<IMenuItem>`
 `;
 
 export const ProfileContent = styled.div`
-  position: absolute;
   color: #fff;
-  bottom: 0;
-  left: 0;
   width: 100%;
 `;
 
 export const Profile = styled.div`
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 6px;
   padding: 10px 6px;
   height: 60px;
   background: #1d1b31;
 
   svg {
-    position: absolute;
-    left: 88%;
     bottom: 5px;
     transform: translateX(-50%);
-    min-width: 50px;
     line-height: 50px;
   }
 `;
@@ -146,10 +181,10 @@ export const NameJob = styled.div`
 `;
 
 export const Name = styled.div`
-  font-size: 15px;
+  font-size: 0.93rem;
   font-weight: 400;
 `;
 
 export const Job = styled.div`
-  font-size: 12px;
+  font-size: 0.75rem;
 `;
