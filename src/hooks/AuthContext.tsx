@@ -20,6 +20,7 @@ interface SignInCredentials {
 interface AuthContextData {
   user: User;
   signIn(credentials: SignInCredentials): Promise<void>
+  signOut(): void;
 }
 
 interface TransactionsProviderProps {
@@ -53,10 +54,17 @@ function AuthProvider({ children }: TransactionsProviderProps) {
     localStorage.setItem('@Mostweb:user', JSON.stringify(id, email, profiles));
 
     setData({ token, user })
+  }, []);
+
+  const signOut = useCallback(() => {
+    localStorage.removeItem('@Mostweb:token');
+    localStorage.removeItem('@Mostweb:user');
+
+    setData({} as AuthState)
   }, [])
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn }}>
+    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   )

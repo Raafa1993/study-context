@@ -27,15 +27,13 @@ interface Errors {
 export default function Login() {
   const formRef = useRef(null);
   const history = useHistory()
-  const { user, signIn } = useAuth()
+  const { signIn } = useAuth()
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState({} as Errors);
   const [formData, setFormData] = useState<SignInFormData>({
     email: "",
     password: "",
   });
-
-  console.log(user)
 
   function handleinputChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -64,9 +62,10 @@ export default function Login() {
         password: data.password,
       })
 
-      // setTimeout(() => {
-      //   history.push('/home')
-      // }, 1000);
+      setTimeout(() => {
+        history.push('/home')
+        window.location.reload();
+      }, 1000);
 
     } catch (e: any) {
       setTimeout(() => {

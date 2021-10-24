@@ -18,29 +18,35 @@ export const Container = styled.div<sidebarProps>`
   position: relative;
 `;
 
-export const ButtonBurguer = styled.div<sidebarProps>`
-  position: absolute;
-  top: 50%;
-  right: ${(props) => (props.mobalActive ? "-55%" : "-20%")};
-  transform: translate(-50%, -50%);
-  transition: all 0.5s ease;
+// export const ButtonBurguer = styled.div<sidebarProps>`
+//   position: absolute;
+//   top: 50%;
+//   right: ${(props) => (props.mobalActive ? "-88%" : "-30%")};
+//   transform: translate(-50%, -50%);
+//   transition: all 0.5s ease;
 
-  button {
-    display: grid;
-    place-items: center;
-    width: 30px;
-    height: 60px;
+//   button {
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
+//     width: 80px;
+//     height: 60px;
 
-    outline: none;
-    border: none;
+//     outline: none;
+//     border: none;
 
-    border-radius: 0 12px 12px 0;
-    background: var(--primary);
+//     border-radius: 0 12px 12px 0;
+//     background: var(--primary);
 
-    font-size: 2rem;
-    color: var(--white);
-  }
-`;
+//     font-size: 2rem;
+//     color: var(--white);
+
+//     svg {
+//         transform: ${props => !props.mobalActive ? 'rotate(180deg)' : 'rotate(0)'};
+//         transition: 0.5s;
+//       }
+//   }
+// `;
 
 export const Logo = styled.div<sidebarProps>`
   display: flex;
@@ -55,6 +61,12 @@ export const Logo = styled.div<sidebarProps>`
     color: #fff;
     font-weight: 500;
     display: ${(props) => (!props.mobalActive ? "block" : "none")};
+
+    /* font-size: 1.75rem;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; */
   }
 
   svg {
@@ -93,14 +105,10 @@ export const Li = styled.li<sidebarProps>`
   }
 
   span {
-    opacity: 0;
-    pointer-events: none;
-    ${(props) =>
-    !props.mobalActive &&
-    css`
-        opacity: 1;
-        pointer-events: auto;
-      `}
+    font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .tooltip {
@@ -187,4 +195,31 @@ export const Name = styled.div`
 
 export const Job = styled.div`
   font-size: 0.75rem;
+`;
+
+export const ButtonBurguer = styled.div<sidebarProps>`
+  padding-top: 440px;
+  transition: all 0.5s ease;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 60px;
+
+    outline: none;
+    border: none;
+
+    border-radius: 0 12px 12px 0;
+    background: var(--primary);
+
+    font-size: 2rem;
+    color: var(--white);
+
+    svg {
+        transform: ${props => !props.mobalActive ? 'rotate(180deg)' : 'rotate(0)'};
+        transition: 0.5s;
+      }
+  }
 `;
