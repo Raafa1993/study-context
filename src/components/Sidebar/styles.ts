@@ -18,36 +18,6 @@ export const Container = styled.div<sidebarProps>`
   position: relative;
 `;
 
-// export const ButtonBurguer = styled.div<sidebarProps>`
-//   position: absolute;
-//   top: 50%;
-//   right: ${(props) => (props.mobalActive ? "-88%" : "-30%")};
-//   transform: translate(-50%, -50%);
-//   transition: all 0.5s ease;
-
-//   button {
-//     display: flex;
-//     align-items: center;
-//     justify-content: flex-end;
-//     width: 80px;
-//     height: 60px;
-
-//     outline: none;
-//     border: none;
-
-//     border-radius: 0 12px 12px 0;
-//     background: var(--primary);
-
-//     font-size: 2rem;
-//     color: var(--white);
-
-//     svg {
-//         transform: ${props => !props.mobalActive ? 'rotate(180deg)' : 'rotate(0)'};
-//         transition: 0.5s;
-//       }
-//   }
-// `;
-
 export const Logo = styled.div<sidebarProps>`
   display: flex;
   align-items: center;
@@ -61,12 +31,6 @@ export const Logo = styled.div<sidebarProps>`
     color: #fff;
     font-weight: 500;
     display: ${(props) => (!props.mobalActive ? "block" : "none")};
-
-    /* font-size: 1.75rem;
-
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; */
   }
 
   svg {
@@ -75,7 +39,11 @@ export const Logo = styled.div<sidebarProps>`
 `;
 
 export const Ul = styled.ul`
-  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  margin-top: 60px;
 `;
 
 export const Li = styled.li<sidebarProps>`
@@ -151,51 +119,70 @@ export const Li = styled.li<sidebarProps>`
   }
 `;
 
-export const ProfileContent = styled.div`
-  color: #fff;
-  width: 100%;
-`;
+// export const SectionNotification = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
 
-export const Profile = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 6px;
-  padding: 10px 6px;
-  height: 60px;
-  background: #1d1b31;
+//   border-radius: 16px;
+//   padding: 12px;
 
-  svg {
-    bottom: 5px;
-    transform: translateX(-50%);
-    line-height: 50px;
-  }
-`;
+//   background: var(--background);
 
-export const ProfileDetails = styled.div`
-  display: flex;
-  align-items: center;
+//   position: relative;
 
-  img {
-    height: 45px;
-    width: 45px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-`;
+//   button {
+//     display: grid;
+//     place-items: center;
 
-export const NameJob = styled.div`
-  margin-left: 10px;
-`;
+//     width: 100%;
+//     height: 48px;
 
-export const Name = styled.div`
-  font-size: 0.93rem;
-  font-weight: 400;
-`;
+//     border: none;
+//     border-radius: 12px;
+//     background: linear-gradient(
+//       90deg,
+//       rgba(103, 116, 236, 1) 0%,
+//       rgba(137, 236, 242, 1) 100%
+//     );
+//     font-size: 16px;
+//     font-weight: bold;
+//     color: #fff;
 
-export const Job = styled.div`
-  font-size: 0.75rem;
-`;
+//     margin-top: 16px;
+//   }
+
+// `;
+
+// export const NotificationImage = styled.div`
+//   display: grid;
+//   place-items: center;
+
+//   position: absolute;
+//   top: -28px;
+
+//   img {
+//     width: 60px;
+//     height: 60px;
+//     object-fit: cover;
+//     border-radius: 50%;
+//   }
+// `;
+
+// export const Message = styled.div`
+//   display: grid;
+//   place-items: center;
+//   width: 80%;
+
+//   margin-top: 40px;
+
+//   span {
+//     font-size: 16px;
+//     font-weight: bold;
+//     color: var(--primary);
+//     text-align: center;
+//   }
+// `;
 
 export const ButtonBurguer = styled.div<sidebarProps>`
   padding-top: 440px;

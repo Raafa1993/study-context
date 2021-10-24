@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { IoLogoWindows, } from 'react-icons/io'
-import { FiLogOut, FiChevronRight } from 'react-icons/fi'
+import { FiChevronRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 
 import {
@@ -8,15 +8,8 @@ import {
   Logo,
   Ul,
   Li,
-  ProfileContent,
-  Profile,
-  ProfileDetails,
-  NameJob,
-  Name,
-  Job,
-  ButtonBurguer
+  ButtonBurguer,
 } from './styles';
-import { useAuth } from '../../hooks/AuthContext';
 
 interface IMenu {
   to: string;
@@ -31,11 +24,9 @@ interface ISiderbar {
 }
 
 export default function Sidebar({ menus, path }: ISiderbar) {
-  const { signOut } = useAuth()
   const [mobalActive, setMobalActive] = useState(false)
   return (
     <>
-
       <Container mobalActive={mobalActive}>
         <Logo mobalActive={mobalActive}>
           <IoLogoWindows />
@@ -61,31 +52,6 @@ export default function Sidebar({ menus, path }: ISiderbar) {
             </Li>
           ))}
         </Ul>
-
-        <ProfileContent>
-          <Profile>
-            <ProfileDetails>
-              <img src="https://avatars.githubusercontent.com/u/37309024?v=4" alt="image profile" />
-              <NameJob>
-                <Name>Rafael Araujo</Name>
-                <Job>Web Design</Job>
-              </NameJob>
-            </ProfileDetails>
-            <button
-              onClick={() => signOut()}
-            >
-              <FiLogOut />
-            </button>
-          </Profile>
-        </ProfileContent>
-
-        {/* <ButtonBurguer mobalActive={mobalActive}>
-          <button
-            onClick={() => setMobalActive(!mobalActive)}
-          >
-            <FiChevronRight />
-          </button>
-        </ButtonBurguer> */}
 
       </Container>
 

@@ -1,7 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useHistory } from "react-router";
-import Button from "../../components/Button";
-import Input from "../../components/Input";
+import Button from "../../components/Buttons/Button";
+import Input from "../../components/Buttons/Input";
 import { useAuth } from '../../hooks/AuthContext'
 import {
   Container,
@@ -40,7 +40,7 @@ export default function Login() {
     setFormData({ ...formData, [name]: value });
   }
 
-  function handleSubmit(event: any) {
+  const handleSubmit = useCallback(async (event: any) => {
     try {
       event.preventDefault();
       setLoading(true)
@@ -57,15 +57,17 @@ export default function Login() {
       //     name: "Usuario ou senha incorretos.",
       //     message: "Usuario ou senha incorretos.",
       //   };
-      signIn({
+      await signIn({
         email: data.email,
         password: data.password,
       })
 
-      setTimeout(() => {
-        history.push('/home')
-        window.location.reload();
-      }, 1000);
+      setLoading(false)
+
+      history.push('/home')
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 1000);
 
     } catch (e: any) {
       setTimeout(() => {
@@ -77,7 +79,8 @@ export default function Login() {
         setLoading(false)
       }, 1000);
     }
-  }
+  }, [signIn, history]
+  )
 
   return (
     <Container>

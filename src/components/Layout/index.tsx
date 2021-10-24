@@ -8,6 +8,7 @@ import {
   FiCompass,
   FiSettings,
 } from 'react-icons/fi'
+import Header from '../Header';
 
 import Sidebar from '../Sidebar';
 
@@ -60,6 +61,7 @@ export default function Layout(props: any) {
         ]}
       />
       <Main>
+        <Header />
         {props.children}
       </Main>
     </Container>

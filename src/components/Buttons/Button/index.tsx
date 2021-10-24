@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes } from 'react'
-import { IconLoading } from '../../icons/IconLoading'
+import { IconLoading } from '../../../icons/IconLoading'
 
 import { Container } from './styles'
 

@@ -4,13 +4,15 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   height: 100%;
+
+  background: var(--background);
 `;
 
 export const Main = styled.div`
   flex: 1;
-  padding: 0px 32px;
   overflow: auto;
   max-height: 100vh;
+  padding: 20px;
   @keyframes pageReload {
     from {
       filter: blur(50px);
