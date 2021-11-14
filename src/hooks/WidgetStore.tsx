@@ -1,13 +1,31 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import IconAddImage from "../icons/IconAddImage";
+import nextId from 'react-id-generator'
 // import { Image, ImageEdit } from "../Components/Edits/EditImage/EditImage";
 // import ImageIcon from "../Icons/ImageIcon";
+
+interface WidgetTemplate {
+  id: string;
+  className: string;
+  name: string;
+  ico: string;
+  cat: string;
+  icone: any;
+  component: string;
+  componentEdit: string;
+  options: {}
+}
+
+interface Widget extends Array<WidgetTemplate>{} {
+}
 
 const WidgetStoreContext = createContext({} as any);
 
 function WidgetStoreProvider({ children }: any) {
-  const [addContent, setAddContent] = useState([
+  
+  const [addContent, setAddContent] = useState<Widget>([
     {
+    id: nextId(),
     className: "widgetImage",
     name: "imagem",
     ico: 'image',
@@ -25,6 +43,7 @@ function WidgetStoreProvider({ children }: any) {
     },
   },
   {
+    id: nextId(),
     className: "widget-contador",
     name: "Contador",
     ico: "timer",
@@ -32,7 +51,6 @@ function WidgetStoreProvider({ children }: any) {
     cat: "function",
     component: 'Count',
     componentEdit: 'CountEdit',
-    style: {},
     options: {
       colorPrimary: "#0766ff",
       colorSecundary: "#000",
@@ -43,9 +61,38 @@ function WidgetStoreProvider({ children }: any) {
       time: "00:00",
     },
   },
-
 ])
 
+  // const [defaultTemplate, setDefaultTemplate] = useState([
+  //   {
+  //     addContent,
+  //   }] as any
+  // )
+
+  
+  // const newTemplate = [] as any;
+
+  // addContent.map((row: any) => {
+  //   var item = {} as any
+  //   item.id = nextId()
+  //   item.template = row
+
+
+  //   if (row.content) {
+  //     row.content.map(
+  //       (content: any, contentKey: any) => (item.content[contentKey] = []),
+  //     );
+  //   }
+
+  //   console.log("row",item)
+  //   newTemplate.push(item)
+    
+    
+  // })
+  // setAddContent([...newTemplate])
+  
+
+  
   return (
     <WidgetStoreContext.Provider value={{ 
       addContent,

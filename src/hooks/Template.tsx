@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 // import messageStore from "../Store/MessageStore";
 // import widgetStore from "../Store/WidgetStore";
 
-const TemplateContext = createContext({});
+const TemplateContext = createContext({} as any);
 
 function TemplateProvider({ children }: any) {
   const [pageId, setPageId] = useState(0)
@@ -157,4 +157,4 @@ function useTemplate() {
   return context;
 }
 
-export { TemplateProvider, useTemplate,  }
+export { TemplateProvider, useTemplate }

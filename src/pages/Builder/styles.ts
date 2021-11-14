@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   width: 100%;
   height: 100%;
-`
+`;
 
 export const Content = styled.div`
   display: grid;
@@ -13,16 +13,15 @@ export const Content = styled.div`
 
   width: 100%;
   height: 85%;
-  
+
   padding: 16px;
   gap: 40px;
   margin-top: 40px;
 
-  background: #F8F8F8;
+  background: #f8f8f8;
   border: 1px solid #fff;
   border-radius: 20px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
-
 `;
 
 export const PanelLeft = styled.div`
@@ -38,9 +37,7 @@ export const PanelLeft = styled.div`
   border-radius: 20px; */
 `;
 
-export const WidgetLeft = styled.div`
-
-`;
+export const WidgetLeft = styled.div``;
 
 export const PanelCenter = styled.div`
   display: flex;
@@ -64,7 +61,7 @@ export const Controlers = styled.div`
   width: 75%;
   height: 68px;
 
-  background: #F8F8F8;
+  background: #f8f8f8;
   border: 1px solid #fff;
   border-radius: 20px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
@@ -111,8 +108,21 @@ export const PhonePreview = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-`;
 
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      height: 100%;
+      width: 100%;
+
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+`;
 
 export const PanelRight = styled.div`
   display: flex;
@@ -120,13 +130,10 @@ export const PanelRight = styled.div`
 
   width: 100%;
   height: 100%;
-  background: #FFFFFF7A;
+  background: #ffffff7a;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.03);
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   border-radius: 20px;
-  
 `;
 
-export const WidgetRight = styled.div`
-
-`;
+export const WidgetRight = styled.div``;
