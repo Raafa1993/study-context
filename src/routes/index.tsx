@@ -1,8 +1,7 @@
 import { Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
-import Admin from '../pages/Admin';
+import Builder from '../pages/Builder';
 import Home from '../pages/Home';
-import { Route } from 'react-router-dom';
 import PrivateRoutes from './PrivateRoutes';
 
 import Login from '../pages/Login';
@@ -13,8 +12,8 @@ function Routes({ props }: any) {
       <PrivateRoutes path="/" exact component={Login} />
 
       <Layout {...props}>
-        <PrivateRoutes path="/home" exact component={Home} isPrivate />
-        <PrivateRoutes path="/admin" exact component={Admin} isPrivate />
+        <PrivateRoutes path="/home" exact component={Home}  />
+        <PrivateRoutes path="/builder" exact component={Builder}  />
       </Layout>
     </Switch>
   )

@@ -14,9 +14,6 @@ interface RouteProps extends ReactDOMRouteProps {
 const PrivateRoutes: React.FC<RouteProps> = ({ isPrivate = false, component: Component, ...rest }) => {
   const { user } = useAuth();
 
-  console.log(user)
-  // let profiles = user.profiles.map((profile: any) => profile.authority)
-
   return (
     <ReactDOMRoute
       {...rest}

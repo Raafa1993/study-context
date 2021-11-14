@@ -15,7 +15,6 @@ import Sidebar from '../Sidebar';
 import { Container, Main } from './styles';
 
 export default function Layout(props: any) {
-  console.log(props)
 
   return (
     <Container>
@@ -28,8 +27,8 @@ export default function Layout(props: any) {
             icon: FiCoffee,
           },
           {
-            to: '/admin',
-            name: 'Admin',
+            to: '/builder',
+            name: 'Builder',
             icon: FiBookOpen,
           },
           {

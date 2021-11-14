@@ -33,7 +33,7 @@ export default function Header() {
 
         <Profile>
           <Image>
-            <img src="https://lh3.googleusercontent.com/ogw/ADea4I7zw5HE722fQW5PYNh1B1EWhCu-spnDyhuCbSaDVhY=s83-c-mo" alt="Image profile" />
+            <img src="https://lh3.googleusercontent.com/ogw/ADea4I7zw5HE722fQW5PYNh1B1EWhCu-spnDyhuCbSaDVhY=s83-c-mo" alt="profile" />
           </Image>
           <Info>
             <h2>Rafael Araujo</h2>

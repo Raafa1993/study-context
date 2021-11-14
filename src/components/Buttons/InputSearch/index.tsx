@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useCallback, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 import { Container } from './styles'
