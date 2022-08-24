@@ -52,15 +52,16 @@ export default function Login() {
         password,
       };
 
-      // if (formData.email !== "mostweb@most.com")
-      //   throw {
-      //     name: "Usuario ou senha incorretos.",
-      //     message: "Usuario ou senha incorretos.",
-      //   };
-      await signIn({
-        email: data.email,
-        password: data.password,
-      })
+      if (formData.email !== "mostweb@most.com")
+        throw {
+          name: "Usuario ou senha incorretos.",
+          message: "Usuario ou senha incorretos.",
+        };
+
+      // await signIn({
+      //   email: data.email,
+      //   password: data.password,
+      // })
 
       setLoading(false)
 

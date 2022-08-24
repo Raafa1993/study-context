@@ -1,10 +1,10 @@
 import { Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
-import Builder from '../pages/Builder';
 import Home from '../pages/Home';
 import PrivateRoutes from './PrivateRoutes';
 
 import Login from '../pages/Login';
+import Forms from '../pages/Forms';
 
 function Routes({ props }: any) {
   return (
@@ -13,7 +13,7 @@ function Routes({ props }: any) {
 
       <Layout {...props}>
         <PrivateRoutes path="/home" exact component={Home}  />
-        <PrivateRoutes path="/builder" exact component={Builder}  />
+        <PrivateRoutes path="/forms" exact component={Forms}  />
       </Layout>
     </Switch>
   )

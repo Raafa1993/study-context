@@ -18,7 +18,7 @@ export const Content = styled.div`
   grid-template-columns: 1fr 1fr;
   width: 90%;
   max-width: 1072px;
-  height: 824px;
+  height: 100%;
   
   border-radius: 20px;
   

@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from 'react';
 import InputSearch from '../Buttons/InputSearch';
 import {
   Container,
@@ -13,6 +14,18 @@ import {
 } from './styles';
 
 export default function Header() {
+  const [avatar, setAvatar] = useState('')
+
+  useEffect(() => {
+    getUser()
+  }, [])
+
+  async function getUser() {
+    const response = await fetch('https://api.github.com/users/Raafa1993');
+    const body = await response.json();
+    setAvatar(body.avatar_url)
+  }
+  
   return (
     <Container>
       <InputSearch />
@@ -33,7 +46,7 @@ export default function Header() {
 
         <Profile>
           <Image>
-            <img src="https://lh3.googleusercontent.com/ogw/ADea4I7zw5HE722fQW5PYNh1B1EWhCu-spnDyhuCbSaDVhY=s83-c-mo" alt="profile" />
+            <img src={avatar} alt="profile" />
           </Image>
           <Info>
             <h2>Rafael Araujo</h2>

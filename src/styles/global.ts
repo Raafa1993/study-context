@@ -18,6 +18,10 @@ export const GlobalStyles = createGlobalStyle`
   --degradeDark: #6774EC;
   --degradeLight: #89ECF2;
 
+  --primary-color: #34cb79;
+  --title-color: #322153;
+  --text-color: #6c6c80;
+
   --image: url("../../Images/IphoneX.png");
 
 }

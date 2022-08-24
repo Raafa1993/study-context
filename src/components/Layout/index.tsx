@@ -27,8 +27,8 @@ export default function Layout(props: any) {
             icon: FiCoffee,
           },
           {
-            to: '/builder',
-            name: 'Builder',
+            to: '/forms',
+            name: 'Forms',
             icon: FiBookOpen,
           },
           {
