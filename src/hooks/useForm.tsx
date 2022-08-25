@@ -13,7 +13,7 @@ const types: any = {
       errorNull: "Preencha o campo email"
     },
     cpf: {
-      regex: /^(\d{3}\.?\d{3}\.?\d{3}\-?\d{2})$/,
+      regex: /^(\d{3}\.?\d{3}\.?\d{3}-?\d{2})$/,
       message: 'CPF inválido',
       errorNull: "Preencha o campo cpf"
     },

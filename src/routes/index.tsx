@@ -5,6 +5,7 @@ import PrivateRoutes from './PrivateRoutes';
 
 import Login from '../pages/Login';
 import Forms from '../pages/Forms';
+import Graphics from '../pages/Graphics';
 
 function Routes({ props }: any) {
   return (
@@ -14,6 +15,7 @@ function Routes({ props }: any) {
       <Layout {...props}>
         <PrivateRoutes path="/home" exact component={Home}  />
         <PrivateRoutes path="/forms" exact component={Forms}  />
+        <PrivateRoutes path="/graficos" exact component={Graphics} />
       </Layout>
     </Switch>
   )

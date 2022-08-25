@@ -15,11 +15,11 @@ export default function Forms() {
     event.preventDefault();
 
     if(cep.validate() && email.validate() && cpf.validate()) {
-      const newData = {
-        cep: cep.value,
-        email: email.value,
-        cpf: cpf.value,
-      }
+      // const newData = {
+      //   cep: cep.value,
+      //   email: email.value,
+      //   cpf: cpf.value,
+      // }
       // alert(JSON.stringify(newData))
       addToast({
         type: "success",
@@ -28,11 +28,11 @@ export default function Forms() {
       });
       
     } else {
-      const dataError = {
-        cep: cep.error,
-        email: email.error,
-        cpf: cpf.error,
-      }
+      // const dataError = {
+      //   cep: cep.error,
+      //   email: email.error,
+      //   cpf: cpf.error,
+      // }
       addToast({
         type: "error",
         title: "Erro no cadastro",

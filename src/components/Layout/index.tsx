@@ -37,8 +37,8 @@ export default function Layout(props: any) {
             icon: FiCodesandbox,
           },
           {
-            to: '/sections',
-            name: 'Sections',
+            to: '/graficos',
+            name: 'Graficos',
             icon: FiGitlab,
           },
           {

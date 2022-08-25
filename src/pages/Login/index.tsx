@@ -52,7 +52,7 @@ export default function Login() {
         password,
       };
 
-      if (formData.email !== "mostweb@most.com")
+      if (data.email !== "mostweb@most.com")
         throw {
           name: "Usuario ou senha incorretos.",
           message: "Usuario ou senha incorretos.",
@@ -64,8 +64,7 @@ export default function Login() {
       // })
 
       setLoading(false)
-
-      history.push('/home')
+      history.push('/forms')
       // setTimeout(() => {
       //   window.location.reload();
       // }, 1000);
