@@ -22,6 +22,7 @@ const shake = keyframes`
 
 export const Container = styled.div`
   display: grid;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   height: 100%;
 
@@ -147,3 +148,47 @@ export const Container = styled.div`
   }
 `;
 
+export const ContentDebounce = styled.div`
+
+`;
+
+export const StyledWrapper = styled.div`
+  position: relative;
+  width: 16rem;
+`;
+
+export const StyledTextbox = styled.input`
+  height: 4.5rem;
+  width: 16rem;
+  padding: 0 1.5rem; 
+  border-radius: 0.75rem;
+  border: 1px solid #212025;
+  background: #212025; 
+  color: #f9f9f9;
+  transition: all 0.3s;
+  outline: none;
+  &::placeholder { 
+    color: rgba(255, 255, 255, 0.65);
+  }
+`;
+
+
+export const StyledIcon = styled.div`
+  position: absolute; 
+  top: 54%;
+  right: 1.5rem;
+
+  transform: translateY(-50%); 
+  color: rgba(255, 255, 255, 0.96); 
+  font-size: 22px;
+`
+
+export const StyledResults = styled.div`
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  background: #212025;
+  color: #f9f9f9;
+  padding: 0.4rem 1.5rem; 
+`;

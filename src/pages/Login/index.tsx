@@ -43,7 +43,7 @@ export default function Login() {
   const handleSubmit = useCallback(async (event: any) => {
     try {
       event.preventDefault();
-      setLoading(true)
+      // setLoading(true)
 
       const { email, password } = formData;
 
@@ -52,7 +52,7 @@ export default function Login() {
         password,
       };
 
-      console.log(formData)
+      console.log(data)
 
       if (data.email !== "mostweb@most.com")
         throw {
@@ -65,7 +65,7 @@ export default function Login() {
       //   password: data.password,
       // })
 
-      setLoading(false)
+      // setLoading(false)
       history.push('/forms')
       // setTimeout(() => {
       //   window.location.reload();
