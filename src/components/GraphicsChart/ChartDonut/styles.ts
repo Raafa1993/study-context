@@ -7,7 +7,9 @@ export const Container = styled.div`
 
   display: flex;
   align-content: center;
+  flex-direction: column;
 
   background-color: var(--primary);
-  border-radius: 12px;
+  border-radius: 1rem;
+  color: #fff;
 `;

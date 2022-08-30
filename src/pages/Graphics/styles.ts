@@ -5,10 +5,16 @@ export const Container = styled.div`
   height: 100%;
 `;
 
+export const SectionCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+`;
+
 export const SectionChartDonuts = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
 `

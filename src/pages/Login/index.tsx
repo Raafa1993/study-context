@@ -52,6 +52,8 @@ export default function Login() {
         password,
       };
 
+      console.log(formData)
+
       if (data.email !== "mostweb@most.com")
         throw {
           name: "Usuario ou senha incorretos.",

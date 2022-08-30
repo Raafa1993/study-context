@@ -9,5 +9,5 @@ export const Container = styled.div`
   align-content: center;
 
   background-color: var(--primary);
-  border-radius: 12px;
+  border-radius: 1rem;
 `;

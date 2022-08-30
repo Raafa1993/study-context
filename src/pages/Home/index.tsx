@@ -1,7 +1,10 @@
+
+import { Container } from './styles';
+
 export default function Home() {
   return (
-    <div>
-      ola mundo
-    </div>
+    <Container>
+      <h1>Hello World</h1>
+    </Container>
   )
 }
