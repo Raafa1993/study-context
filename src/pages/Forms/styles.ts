@@ -185,10 +185,14 @@ export const StyledIcon = styled.div`
 
 export const StyledResults = styled.div`
   position: absolute;
-  top: 4rem;
+  top: 62px;
   left: 0;
   width: 100%;
   background: #212025;
   color: #f9f9f9;
-  padding: 0.4rem 1.5rem; 
+  padding: 0.6rem 1.5rem; 
+
+  div + div {
+    margin-top: 6px;
+  }
 `;

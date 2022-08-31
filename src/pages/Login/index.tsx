@@ -2,7 +2,7 @@ import { useState, useRef, useCallback } from "react";
 import { useHistory } from "react-router";
 import Button from "../../components/Buttons/Button";
 import Input from "../../components/Buttons/Input";
-import { useAuth } from '../../hooks/AuthContext'
+import { useAuth } from "../../hooks/AuthContext";
 import {
   Container,
   Content,
@@ -43,7 +43,7 @@ export default function Login() {
   const handleSubmit = useCallback(async (event: any) => {
     try {
       event.preventDefault();
-      // setLoading(true)
+      setLoading(true)
 
       const { email, password } = formData;
 
@@ -52,21 +52,13 @@ export default function Login() {
         password,
       };
 
-      console.log(data)
+      await signIn({
+        email: data.email,
+        password: data.password,
+      })
 
-      if (data.email !== "mostweb@most.com")
-        throw {
-          name: "Usuario ou senha incorretos.",
-          message: "Usuario ou senha incorretos.",
-        };
-
-      // await signIn({
-      //   email: data.email,
-      //   password: data.password,
-      // })
-
-      // setLoading(false)
-      history.push('/forms')
+      setLoading(false)
+      history.push('/home')
       // setTimeout(() => {
       //   window.location.reload();
       // }, 1000);

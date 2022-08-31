@@ -43,17 +43,40 @@ function AuthProvider({ children }: TransactionsProviderProps) {
   })
 
   const signIn = useCallback(async ({ email, password }) => {
-    const response = await api.post<{ token: string, id: object, profiles: any }>('/login', {
-      email,
-      password,
-    });
+    // const response = await api.post<{ token: string, id: object, profiles: any }>('/login', {
+    //   email,
+    //   password,
+    // });
 
-    const { token, id, profiles } = response.data;
+    // const { token, id, profiles } = response.data;
+
+    const responseFake = {
+      token: "147",
+      id: 147,
+      profiles: "admin"
+    }
+
+    const {token, id, profiles} = responseFake
+
+    console.log(email)
+    console.log(password)
+
+    if (email !== "mostweb@most.com" && password !== "147") {
+      throw {
+        name: "Usuario ou senha incorretos.",
+        message: "Usuario ou senha incorretos.",
+      };
+    }
 
     localStorage.setItem('@Mostweb:token', token);
     localStorage.setItem('@Mostweb:user', JSON.stringify(id, email, profiles));
-
+  
     setData({ token, user })
+    // localStorage.setItem('@Mostweb:token', token);
+    // localStorage.setItem('@Mostweb:user', JSON.stringify(id, email, profiles));
+
+    // setData({ token, user })
+
   }, []);
 
   const signOut = useCallback(() => {
